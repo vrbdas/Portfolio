@@ -3,5 +3,21 @@
     position: relative;
     background: url('../img/Background.png') 50% 50%/cover no-repeat;
     padding-top: 205px;
-    
+    &__subtitle {
+        margin-bottom: 10px;
+    }
+    &__title {
+        margin-bottom: 25px;
+    }
+    &__btns {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 250px;
+    }
+    &__link {
+        color: #000;
+        font-weight: 700;
+        text-decoration: none;
+    }
 }
