@@ -19,7 +19,7 @@
     height: 3px;
     background-color: $main-color;
     &_mb60 {
-        margin-bottom: 60px;
+        margin: 0 auto 60px auto;
     }
     &_mb20 {
         margin-bottom: 20px;
@@ -32,6 +32,8 @@
 @import 'blocks/sidepanel';
 @import 'blocks/menu';
 @import 'blocks/about-me';
+@import 'blocks/resume';
+@import 'blocks/tools';
 
 
 

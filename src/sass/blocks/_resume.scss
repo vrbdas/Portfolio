@@ -1,0 +1,96 @@
+.resume {
+	padding-top: 120px;
+	&__title {
+		position: relative;
+		text-align: center;
+		margin-bottom: 6px;
+		@include before_circle;
+		&:before {
+			top: -6px;
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+	&__subtitle {
+		text-align: center;
+		margin-bottom: 25px;
+	}
+	&__wrapper {
+		padding: 0 65px;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		column-gap: 135px;
+	}
+	&__column {
+		&-title {
+			position: relative;
+			padding-left: 43px;
+			margin-bottom: 0;
+			&:before {
+				content: '';
+				position: absolute;
+				left: -7px;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 15px;
+				height: 15px;
+				background: $main-color;
+				border-radius: 100%;
+			}
+		}
+		ul {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+			li {
+				position: relative;
+				&::after {
+					content: '';
+					height: calc(100% + 8px);
+					position: absolute;
+					top: -8px;
+					left: 0;
+					border: 1px solid #000;
+				}
+			}
+		}
+	}
+	&__item {
+		position: relative;
+		&::before {
+			content: '';
+			width: 43px;
+			position: absolute;
+			top: 63px;
+			border: 1px solid #000;
+		}
+		&-head {
+			position: relative;
+			padding: 45px 0 0 100px;
+		}
+		&-body {
+			padding-left: 43px;
+			margin-top: 12px;
+		}
+		&-icon {
+			position: absolute;
+			top: 59px;
+			left: 60px;
+			@include before_circle;
+			&:before {
+				left: -17px;
+				top: -14px;
+			}
+		}
+		&-subtitle {
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 18px;
+		}
+		&-body {
+			font-weight: 500;
+			font-size: 12px;
+			line-height: 18px;
+		}
+	}
+}
