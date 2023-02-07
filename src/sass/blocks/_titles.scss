@@ -20,4 +20,29 @@
 		font-size: 48px;
 		line-height: 60px;
 	}
+	&__first {
+        position: relative;
+        text-align: center;
+        margin-bottom: 6px;
+        @include before_circle;
+        &:before {
+            top: -6px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+		&_mb25 {
+			margin-bottom: 25px;
+		}
+    }
+    &__second {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+    &__left {
+        position: relative;
+        @include before_circle;
+        padding-left: 12px;
+        margin-bottom: 6px;
+        z-index: 1;
+    }
 }

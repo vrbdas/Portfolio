@@ -17,16 +17,10 @@
 	&__text {
 		grid-area: 1/2/2/3;
 	}
-	&__title {
-		position: relative;
-		@include before_circle;
-		padding-left: 12px;
-		margin-bottom: 6px;
-	}
 	&__descr {
 		margin: 0;
 		font-size: 14px;
-/* 		font-weight: 500; */
+		font-weight: 500;
 		line-height: 21px; 
 	}
 	&__skills {

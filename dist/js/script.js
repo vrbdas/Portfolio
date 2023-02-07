@@ -14,14 +14,18 @@ closeElem.addEventListener('click', function () {
 
 //progress bar
 
-function progress() {
-	const input = document.querySelector('.progress__counter');
-	const output = document.querySelector('.progress__bar_fill');
+/* const input = document.querySelector('.progress__counter');
+const output = document.querySelector('.progress__bar_fill');
 
-	input.addEventListener('change', function () {
-		let e = input.value;
-		output.style.width = e;
-	});
-}
-progress()
+input.addEventListener('change', function () {
+	let e = input.value;
+	output.style.width = e;
+}); */
+
+const counters = document.querySelectorAll('.progress__counter');
+const lines = document.querySelectorAll('.progress__bar_fill');
+
+counters.forEach((item, i) => {
+	lines[i].style.width = item.innerHTML;
+});
 
