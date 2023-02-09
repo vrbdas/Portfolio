@@ -1,4 +1,4 @@
-//promo menu
+//menu
 
 const hamburger = document.querySelector('.hamburger');
 const menu = document.querySelector('.menu');
@@ -14,14 +14,6 @@ closeElem.addEventListener('click', function () {
 
 //progress bar
 
-/* const input = document.querySelector('.progress__counter');
-const output = document.querySelector('.progress__bar_fill');
-
-input.addEventListener('change', function () {
-	let e = input.value;
-	output.style.width = e;
-}); */
-
 const counters = document.querySelectorAll('.progress__counter');
 const lines = document.querySelectorAll('.progress__bar_fill');
 
@@ -29,3 +21,16 @@ counters.forEach((item, i) => {
 	lines[i].style.width = item.innerHTML;
 });
 
+//policy
+
+const policyLink = document.querySelector('#policyLink');
+const policy = document.querySelector('.policy');
+const policyClose = document.querySelector('.policy__close');
+
+policyLink.addEventListener('click', function () {
+	policy.classList.add('active');
+});
+
+policyClose.addEventListener('click', function () {
+	policy.classList.remove('active');
+});
