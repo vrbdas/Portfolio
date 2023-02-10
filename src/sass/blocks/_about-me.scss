@@ -4,18 +4,16 @@
 	&__wrapper {
 		padding-right: 100px;
 		display: grid;
-		grid-template: auto 1fr/0.7fr 1fr;
-		gap: 40px 70px;
-		align-items: start;
+		grid-template: auto 1fr/400px 570px;
+        gap: 40px 70px;
 	}
 	&__photo {
-		grid-area: 1/1/3/2;
+		grid-row: 1/3;
 		img {
 			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
-	}
-	&__text {
-		grid-area: 1/2/2/3;
 	}
 	&__descr {
 		margin: 0;
@@ -24,10 +22,9 @@
 		line-height: 21px; 
 	}
 	&__skills {
-		grid-area: 2/2/3/3;
 		display: grid;
 		gap: 20px 50px;
-		grid-template: repeat(2, 1fr)/repeat(2, 1fr);
+		grid-template: auto 1fr/repeat(2, 1fr);
 		grid-auto-rows: 1fr;
 	}
 }
