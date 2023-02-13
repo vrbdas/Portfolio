@@ -14,11 +14,47 @@
     .container {
         max-width: 960px;
     }
+    .about-me {
+        &__wrapper {
+            padding: 0;
+            column-gap: 50px;
+        }
+        &__skills {
+            column-gap: 20px;
+        }
+    }
 }
-
 @media (max-width: 992px) {
     .container {
         max-width: 720px;
+    }
+    .about-me {
+        padding-top: 80px;
+        &__wrapper {
+            gap: 30px;
+            grid-template: auto 1fr/300px 1fr;
+        }
+        &__skills {
+            display: grid;
+            grid-template: repeat(3, 1fr)/auto;
+        }
+    }
+    .title_fs36 {
+        font-size: 30px;
+        line-height: 45px;
+    }
+    .resume {
+        padding-top: 80px;
+        &__wrapper {
+            padding: 0;
+            column-gap: 50px;
+        }
+    }
+    .divider_mb60 {
+        margin-bottom: 40px;
+    }
+    .title__second {
+        margin-bottom: 15px;
     }
 }
 
@@ -35,7 +71,17 @@
         font-size: 36px;
         line-height: 39px;
     }
-
+    .about-me {
+        &__wrapper {
+            grid-template: 400px auto auto/1fr;
+        }
+        &__photo {
+            grid-row: unset;
+        }
+        &__skills {
+            grid-template: repeat(2, auto)/repeat(2, 1fr);
+        }
+    }
 }
 
 @media (max-width: 576px) {
@@ -58,6 +104,37 @@
         &__block {
             width: 250px;
             padding-left: 55px;
+        }
+    }
+    .about-me {
+        padding-top: 40px;
+        &__wrapper {
+            grid-template: 340px auto auto/1fr;
+            gap: 20px;
+        }
+        &__skills {
+            grid-template: repeat(3, auto)/1fr;
+        }
+    }
+    .title__left {
+        margin-bottom: 26px;
+    }
+    .title__first {
+        margin-bottom: 26px;
+    }
+    .title_fs36 {
+        font-size: 24px;
+        line-height: 36px;
+        margin-bottom: 15px;
+    }
+    .divider_mb20 {
+        margin-bottom: 20px;
+    }
+    .resume {
+        padding-top: 40px;
+        &__wrapper {
+            grid-template: auto auto/1fr;
+            gap: 40px;
         }
     }
 }

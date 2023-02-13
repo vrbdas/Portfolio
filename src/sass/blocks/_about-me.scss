@@ -4,7 +4,7 @@
 	&__wrapper {
 		padding-right: 100px;
 		display: grid;
-		grid-template: auto 1fr/400px 570px;
+		grid-template: auto 1fr/400px 1fr;
         gap: 40px 70px;
 	}
 	&__photo {
@@ -30,7 +30,7 @@
 }
 .skill {
 	display: grid;
-	grid-template-columns: auto 1fr;
+	grid-template-columns: 40px 1fr;
 	gap: 20px;
 	&__icon {
 		padding: 15px 0 0 15px;
