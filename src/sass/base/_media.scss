@@ -23,7 +23,27 @@
             column-gap: 20px;
         }
     }
+    .portfolio {
+        &__wrapper {
+            grid-template: auto/repeat(auto-fit,280px);
+            justify-content: center;
+        }
+        .horizontal, .vertical {
+            grid-area: unset;
+        }
+    }
+    .contacts {
+        &__wrapper {
+            padding: 0;
+            grid-template-columns: 400px 500px;
+        }
+        &__form {
+            gap: 20px;
+            grid-template: 45px minmax(100px, 1fr) 45px/repeat(2,1fr);
+        }
+    }
 }
+
 @media (max-width: 992px) {
     .container {
         max-width: 720px;
@@ -31,7 +51,7 @@
     .about-me {
         padding-top: 80px;
         &__wrapper {
-            gap: 30px;
+            gap: 40px;
             grid-template: auto 1fr/300px 1fr;
         }
         &__skills {
@@ -41,7 +61,6 @@
     }
     .title_fs36 {
         font-size: 30px;
-        line-height: 45px;
     }
     .resume {
         padding-top: 80px;
@@ -57,10 +76,33 @@
         margin-bottom: 15px;
     }
     .tools {
-        padding-top: 40px;
+        padding-top: 80px;
         &__wrapper {
-            grid-template: repeat(3, 1fr)/repeat(3, 1fr);
-            margin-bottom: 48px;
+            margin-bottom: 50px;
+        }
+    }
+    .progress {
+        grid-template: auto/repeat(auto-fit,300px);
+        gap: 40px;
+    }
+    .portfolio {
+        padding-top: 80px;
+    }
+    .price {
+        padding-top: 80px;
+        &__wrapper {
+            padding: 0;
+            grid-template: auto/repeat(auto-fit,350px);
+        }
+    }
+    .contacts {
+        padding: 80px 0 80px 0;
+        &__wrapper {
+            grid-template-columns: 300px 1fr;
+        }
+        &__triggers {
+            column-gap: 10px;
+            grid-template-columns: 1fr 1fr;
         }
     }
 }
@@ -76,9 +118,9 @@
     }
     .title_fs48 {
         font-size: 36px;
-        line-height: 39px;
     }
     .about-me {
+        padding-top: 50px;
         &__wrapper {
             grid-template: 400px auto auto/1fr;
         }
@@ -89,20 +131,41 @@
             grid-template: repeat(2, auto)/repeat(2, 1fr);
         }
     }
+    .resume {
+        padding-top: 50px;
+    }
     .tools {
-        padding-top: 40px;
-        &__wrapper {
-            grid-template: repeat(4, 1fr)/1fr 1fr;
-        }
+        padding-top: 50px;
         .divider {
             margin-bottom: 20px;
         }
-        .progress {
-            grid-template: repeat(3, 1fr)/1fr 1fr;
-            gap: 30px;
+        &__wrapper {
+            gap: 20px;
         }
         .tool {
             min-height: unset;
+        }
+    }
+    .portfolio {
+        padding-top: 50px;
+    }
+    .price {
+        padding-top: 50px;
+        &__wrapper {
+            grid-template: auto/repeat(auto-fit, minmax(300px, 1fr));
+            justify-content: center;
+        }
+        &__item {
+            grid-template: repeat(2,auto)/repeat(2,auto);
+        }
+    }
+    .contacts {
+        padding: 50px  0 50px 0;
+        &__wrapper {
+            grid-template-columns: 1fr;
+        }
+        &__photo {
+            display: none;
         }
     }
 }
@@ -115,11 +178,18 @@
     .promo {
         background: url(../img/background-mobile.webp) 100% 50%/cover no-repeat;
     }
+    .btn {
+        font-size: 14px;
+        line-height: 21px;
+    }
     .title_fs48 {
         font-size: 26px;
         margin-bottom: 32px;
     }
-
+    .title_fs36 {
+        font-size: 24px;
+        line-height: 36px;
+    }
     .hamburger {
         right: 20px;
     }
@@ -147,7 +217,6 @@
     }
     .title_fs36 {
         font-size: 24px;
-        line-height: 36px;
         margin-bottom: 15px;
     }
     .resume {
@@ -157,14 +226,27 @@
             gap: 40px;
         }
     }
-    .tools {
-        &__wrapper {
-            grid-template: repeat(7, 1fr)/1fr;
+    .contacts {
+        &__form {
+            grid-template: 45px 45px 143px auto/1fr;
+        }
+        &__textarea {
+            grid-area: unset;
+        }
+        &__triggers {
+            grid-area: unset;
+            grid-template-columns: 1fr;
             gap: 20px;
         }
-        .progress {
-            grid-template: repeat(6, 1fr)/1fr;
-            gap: 40px;
+        &__btn {
+            width: 219px;
+            order: 2;
+            margin: 0 auto;
+        }
+        &__policy {
+            width: 180px;
+            order: 1;
+            margin: 0 auto;
         }
     }
 }

@@ -11,8 +11,9 @@
     &__item {
         padding-left: 25px;
         display: grid;
-        grid-template: repeat(2, auto) / repeat(2, auto);
-        row-gap: 5px;
+        grid-template: repeat(2,1fr)/repeat(2,auto);
+        gap: 5px;
+        align-items: start;
     }
     &__title {
         position: relative;

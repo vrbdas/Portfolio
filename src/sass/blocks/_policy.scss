@@ -18,8 +18,9 @@
         left: 50%;
         top: 50%;
         transform: translateX(-50%)translateY(-50%);
-		width: 400px;
-        min-height: 400px;
+		width: 40vh;
+        height: 50vh;
+        overflow: scroll;
 		padding: 80px 40px 40px 40px;
 		background-color: #fff;
 		z-index: 10;

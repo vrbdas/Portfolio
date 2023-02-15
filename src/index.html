@@ -367,26 +367,32 @@
 	<section class="contacts">
 		<div class="container">
 			<div class="contacts__wrapper">
-				<div class="about-me__photo">
-					<img src="img/Photo.webp" alt="photo">
+				<div class="contacts__photo">
+					<picture>
+						<source media="(max-width: 576px)" srcset="img/Photo-mobile.webp">
+						<source media="(min-width: 577px)" srcset="img/Photo.webp">
+						<img src="img/Photo.webp" alt="photo">
+					</picture>
 				</div>
 				<div class="contacts__descr">
-					<h2 class="title title_fs16 title__left">Контакты</h2>
-					<div class="title title_fs36">Свяжитесь со мной</div>
-					<div class="divider divider_mb20"></div>
-					<div class="title title_fs14 contacts__text-1">Любым удобным для вас способом:</div>
-					<div class="contacts__social">
-						<a href="#" class="contacts__link">
-							<img src="icons/contacts-Facebook.svg" alt="Facebook">
-						</a>
-						<a href="#" class="contacts__link">
-							<img src="icons/contacts-Telegram.svg" alt="Telegram">
-						</a>
-						<a href="#" class="contacts__link">
-							<img src="icons/contacts-Instagram.svg" alt="Instagram">
-						</a>
+					<div class="contacts__top">
+						<h2 class="title title_fs16 title__left">Контакты</h2>
+						<div class="title title_fs36">Свяжитесь со мной</div>
+						<div class="divider divider_mb20"></div>
+						<div class="title title_fs14 contacts__text-1">Любым удобным для вас способом:</div>
+						<div class="contacts__social">
+							<a href="#" class="contacts__link">
+								<img src="icons/contacts-Facebook.svg" alt="Facebook">
+							</a>
+							<a href="#" class="contacts__link">
+								<img src="icons/contacts-Telegram.svg" alt="Telegram">
+							</a>
+							<a href="#" class="contacts__link">
+								<img src="icons/contacts-Instagram.svg" alt="Instagram">
+							</a>
+						</div>
+						<div class="title title_fs14 contacts__text-2">Или оставьте ваши данные и я сама вам напишу:</div>
 					</div>
-					<div class="title title_fs14 contacts__text-2">Или оставьте ваши данные и я сама вам напишу:</div>
 					<form action="#" class="contacts__form">
 						<div class="contacts__input">
 							<input required name="name" id="name" type="text">
@@ -401,11 +407,11 @@
 							<label for="text">Ваше сообщение</label>
 						</div>
 						<div class="contacts__triggers">
-							<button class="btn">Отправить сообщение</button>
+							<button class="btn contacts__btn">Отправить сообщение</button>
 							<div class="contacts__policy">
 								<input required type="checkbox">
-								<span>Я согласен(а) с </span>
-								<span id="policyLink">политикой конфиденциальности</span>
+								<div>Я согласен(а) с <span id="policyLink">политикой конфиденциальности</span></div>
+
 							</div>
 						</div>
 
