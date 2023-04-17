@@ -27,7 +27,7 @@
 		<meta name="theme-color" content="#ffffff">
 	<!-- /Favicon -->
 	<title>Портфолио</title>
-	<link rel="stylesheet" href="css/style.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<aside class="sidepanel">
@@ -63,10 +63,10 @@
 			</div>
 			<nav>
 				<ul class="menu__list">
-					<li class="menu__link"><a href="#">ПРО МЕНЯ</a></li>
+					<li class="menu__link"><a href="#about-me">ПРО МЕНЯ</a></li>
 					<li class="menu__link"><a href="#">МОЙ ОПЫТ</a></li>
 					<li class="menu__link"><a href="#">МОИ НАВЫКИ</a></li>
-					<li class="menu__link"><a href="#">МОИ РАБОТЫ</a></li>
+					<li class="menu__link"><a href="#portfolio">МОИ РАБОТЫ</a></li>
 					<li class="menu__link"><a href="#">ПРАЙС-ЛИСТ</a></li>
 					<li class="menu__link"><a href="#">КОНТАКТЫ</a></li>
 				</ul>
@@ -95,11 +95,11 @@
 			<span></span>
 		</div>
 		<div class="container">
-			<div class="title title_fs16 title__left">Меня зовут Александра Смит</div>
-			<h1 class="title title_fs48 promo__title">Я web-разработчик из города Москва</h1>
+			<div id="promo-subtitle" class="title title_fs16 title__left">Максимов Артем</div>
+			<h1 class="title title_fs48 promo__title">Frontend-разработчик</h1>
 			<div class="promo__btns">
-				<a href="#" class="promo__link btn">Портфолио</a>
-				<a href="#" class="promo__link btn btn_transparent">Про меня</a>
+				<a href="#portfolio" class="promo__link btn">Мои работы</a>
+				<a href="#about-me" class="promo__link btn btn_transparent">Про меня</a>
 			</div>
 		</div>
 	</section>
@@ -108,16 +108,22 @@
 			<div class="about-me__wrapper">
 				<div class="about-me__photo">
 					<picture>
-						<source media="(max-width: 576px)" srcset="img/Photo-mobile.webp">
-						<source media="(min-width: 577px)" srcset="img/Photo.webp">
-						<img src="img/Photo.webp" alt="photo">
+						<source media="(max-width: 576px)" srcset="img/photo800х1200_1.jpg.jpg">
+						<source media="(min-width: 577px)" srcset="">
+						<img src="img/photo800х1200_1.jpg" alt="photo">
 					</picture>
 				</div>
 				<div class="about-me__text">
-					<h2 class="title title_fs16 title__left">Про меня</h2>
-					<div class="title title_fs36">Меня зовут Александра</div>
+					<h2 id="about-me" class="title title_fs16 title__left">Про меня</h2>
+					<div class="title title_fs36">Меня зовут Артем</div>
 					<div class="divider divider_mb20"></div>
-					<p class="about-me__descr">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+					<p class="about-me__descr">Привет! Меня зовут [ваше имя] и я являюсь веб-разработчиком с [количество лет] летним опытом работы в данной области. Я люблю создавать креативные и функциональные веб-сайты, которые помогают компаниям и людям достигать своих целей.
+
+						Моя специализация включает разработку веб-сайтов на основе последних технологий и трендов, таких как HTML5, CSS3, JavaScript, React, Vue.js, Node.js и других. Я также владею навыками работы с базами данных, такими как MySQL, PostgreSQL и MongoDB.
+						
+						В моем портфолио вы можете найти проекты различной сложности и масштаба, от простых лендингов до сложных интернет-магазинов и социальных сетей. Я горжусь каждым проектом, который создал, и стараюсь улучшать свои навыки и знания, чтобы создавать еще более качественные и эффективные веб-сайты.
+						
+						Я верю в тесное сотрудничество с моими клиентами и всегда стремлюсь понимать их бизнес-цели и потребности, чтобы создавать веб-сайты, которые идеально подходят под их потребности. Если вы ищете веб-разработчика, который может создать веб-сайт, который поможет вам достичь ваших бизнес-целей, я буду рад обсудить с вами возможность сотрудничества.</p>
 				</div>
 				<div class="about-me__skills">
 					<div class="skill">
@@ -155,7 +161,7 @@
 	<section class="resume">
 		<div class="container">
 			<h2 class="title title_fs16 title__first">Опыт</h2>
-			<div class="title title_fs36 title__second">Чем я буду полезна</div>
+			<div class="title title_fs36 title__second">Чем я буду полезен</div>
 			<div class="divider divider_mb60"></div>
 			<div class="resume__wrapper">
 				<div class="resume__column-1">
@@ -165,7 +171,7 @@
 							<div class="resume__item-icon">
 								<img src="icons/University.svg" alt="University">
 							</div>
-							<div class="title title_fs14">МГТУ им. Н. Э. Баумана</div>
+							<div class="title title_fs14">МГТУГА</div>
 							<div class="resume__item-subtitle">Диплом магистра | Москва (2014-2020)</div>
 						</div>
 						<div class="resume__item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo.
@@ -218,37 +224,51 @@
 			<div class="divider divider_mb60"></div>
 			<div class="tools__wrapper">
 				<div class="tool">
-					<img src="icons/html5.svg" alt="html5" class="tool__img">
+					<div class="tool__image">
+						<img src="icons/html5.svg" alt="html5">
+					</div>
 					<div class="title title_fs14 tool__title">HTML5</div>
 					<div class="tool__descr">Именно он создает каркас вашего сайта или приложения, а пятая версия позволит мне создавать более SEO-оптимизированную структуру вашего продукта</div>
 				</div>
 				<div class="tool">
-					<img src="icons/css3.svg" alt="css3" class="tool__img">
+					<div class="tool__image">
+						<img src="icons/css3.svg" alt="css3">
+					</div>
 					<div class="title title_fs14 tool__title">CSS3</div>
 					<div class="tool__descr">Этот язык стилей позволяет мне создавать абсолютно любой внешний вид вашего сайта или приложения. Все ограничивается только вашей фантазией!</div>
 				</div>
 				<div class="tool">
-					<img src="icons/JS.svg" alt="JS" class="tool__img">
+					<div class="tool__image">
+						<img src="icons/JS.svg" alt="JS">
+					</div>
 					<div class="title title_fs14 tool__title">Java Script</div>
 					<div class="tool__descr">Этот язык программирования позволяет оживить все что угодно: слайдеры, окна, подсказки, вкладки, получение данных от сервера и многое другое</div>
 				</div>
 				<div class="tool">
-					<img src="icons/Jquery.svg" alt="Jquery" class="tool__img">
+					<div class="tool__image">
+						<img src="icons/Jquery.svg" alt="Jquery">
+					</div>
 					<div class="title title_fs14 tool__title">Jquery</div>
 					<div class="tool__descr">Библиотека Jquery позволит ускорить разработку. Без необходимости интегрировать в проект мы её не будем, но навык работы с ней присутствует</div>
 				</div>
 				<div class="tool">
-					<img src="icons/React.svg" alt="React" class="tool__img">
+					<div class="tool__image">
+						<img src="icons/React.svg" alt="React">
+					</div>
 					<div class="title title_fs14 tool__title">React</div>
 					<div class="tool__descr">Эта библиотека позволяет создавать web-приложения. Мы можем создать максимально интерактивный продукт именно под ваши цели</div>
 				</div>
 				<div class="tool">
-					<img src="icons/Node.js.svg" alt="Node.js" class="tool__img">
+					<div class="tool__image">
+						<img src="icons/Node.js.svg" alt="Node.js">
+					</div>
 					<div class="title title_fs14 tool__title">Node.js</div>
 					<div class="tool__descr">Эта платформа позволяет создавать бэкенд для вашего продукта - “мозги”, которые будут выполнять действия, которые пользователь не видит</div>
 				</div>
 				<div class="tool">
-					<img src="icons/Mongo.db.svg" alt="Mongo.db" class="tool__img">
+					<div class="tool__image">
+						<img src="icons/Mongo.db.svg" alt="Mongo.db">
+					</div>
 					<div class="title title_fs14 tool__title">Mongo.db</div>
 					<div class="tool__descr">Это нереляционная база данных, которая будет хранить данные вашего сайта или приложения</div>
 				</div>
@@ -301,7 +321,7 @@
 	</section>
 	<section class="portfolio">
 		<div class="container">
-			<h2 class="title title_fs16 title__first">Портфолио</h2>
+			<h2 id="portfolio" class="title title_fs16 title__first">Портфолио</h2>
 			<div class="title title_fs36 title__second">Мои работы</div>
 			<div class="divider divider_mb60"></div>
 			<div class="portfolio__wrapper">
@@ -369,9 +389,9 @@
 			<div class="contacts__wrapper">
 				<div class="contacts__photo">
 					<picture>
-						<source media="(max-width: 576px)" srcset="img/Photo-mobile.webp">
-						<source media="(min-width: 577px)" srcset="img/Photo.webp">
-						<img src="img/Photo.webp" alt="photo">
+						<source media="(max-width: 576px)" srcset="img/photo800х1200_2.jpg">
+						<source media="(min-width: 577px)" srcset="">
+						<img src="img/photo800х1200_2.jpg" alt="photo">
 					</picture>
 				</div>
 				<div class="contacts__descr">
@@ -391,7 +411,7 @@
 								<img src="icons/contacts-Instagram.svg" alt="Instagram">
 							</a>
 						</div>
-						<div class="title title_fs14 contacts__text-2">Или оставьте ваши данные и я сама вам напишу:</div>
+						<div class="title title_fs14 contacts__text-2">Или оставьте ваши данные и я сам вам напишу:</div>
 					</div>
 					<form action="#" class="contacts__form">
 						<div class="contacts__input">
@@ -440,6 +460,6 @@
 
 
 	
-	<script src="js/script.js"></script>
+	<script src="js/bundle.js"></script>
 </body>
 </html>
