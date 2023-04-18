@@ -63,12 +63,11 @@
 			</div>
 			<nav>
 				<ul class="menu__list">
-					<li class="menu__link"><a href="#about-me">ПРО МЕНЯ</a></li>
-					<li class="menu__link"><a href="#">МОЙ ОПЫТ</a></li>
-					<li class="menu__link"><a href="#">МОИ НАВЫКИ</a></li>
-					<li class="menu__link"><a href="#portfolio">МОИ РАБОТЫ</a></li>
-					<li class="menu__link"><a href="#">ПРАЙС-ЛИСТ</a></li>
-					<li class="menu__link"><a href="#">КОНТАКТЫ</a></li>
+					<li class="menu__link">Про меня</li>
+					<li class="menu__link">Мой опыт</li>
+					<li class="menu__link">Мои навыки</li>
+					<li class="menu__link">Мои работы</li>
+					<li class="menu__link">Контакты</li>
 				</ul>
 			</nav>
 			<div class="menu__social">
@@ -94,21 +93,21 @@
 			<span class="long"></span>
 			<span></span>
 		</div>
+		<span class="arrow">
+			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
+		</span>
 		<div class="container">
 			<div class="promo__wrapper">
 				<div id="promo-subtitle" class="title title_fs16 title__left">Максимов Артем</div>
 				<h1 class="title title_fs48 promo__title">Frontend-разработчик</h1>
 				<div class="promo__btns">
-					<a href="#portfolio" class="promo__link btn">Мои работы</a>
-					<a href="#about-me" class="promo__link btn btn_transparent">Про меня</a>
+					<div class="promo__link btn">Мои работы</div>
+					<div class="promo__link btn btn_transparent">Про меня</div>
 				</div>
 			</div>
-			<span id="arrow">
-				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
-			</span>
 		</div>
 	</section>
-	<section class="about-me">
+	<section id="about-me" class="about-me">
 		<div class="container">
 			<div class="about-me__wrapper">
 				<div class="about-me__photo">
@@ -119,7 +118,7 @@
 					</picture>
 				</div>
 				<div class="about-me__text">
-					<h2 id="about-me" class="title title_fs16 title__left">Про меня</h2>
+					<h2 class="title title_fs16 title__left">Про меня</h2>
 					<div class="title title_fs36">Меня зовут Артем</div>
 					<div class="divider divider_mb20"></div>
 					<p class="about-me__descr">Привет! Меня зовут [ваше имя] и я являюсь веб-разработчиком с [количество лет] летним опытом работы в данной области. Я люблю создавать креативные и функциональные веб-сайты, которые помогают компаниям и людям достигать своих целей.
@@ -163,7 +162,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="resume">
+	<section id="resume" class="resume">
 		<div class="container">
 			<h2 class="title title_fs16 title__first">Опыт</h2>
 			<div class="title title_fs36 title__second">Чем я буду полезен</div>
@@ -222,7 +221,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="tools">
+	<section id="tools" class="tools">
 		<div class="container">
 			<h2 class="title title_fs16 title__first">Навыки</h2>
 			<div class="title title_fs36 title__second">Что я использую в работе</div>
@@ -324,9 +323,9 @@
 			</div>
 		</div>
 	</section>
-	<section class="portfolio">
+	<section id="portfolio" class="portfolio">
 		<div class="container">
-			<h2 id="portfolio" class="title title_fs16 title__first">Портфолио</h2>
+			<h2 class="title title_fs16 title__first">Портфолио</h2>
 			<div class="title title_fs36 title__second">Мои работы</div>
 			<div class="divider divider_mb60"></div>
 			<div class="portfolio__wrapper">
@@ -351,45 +350,7 @@
 			</div>
 		</div>
 	</section>
-	<section class="price">
-		<div class="container">
-			<h2 class="title title_fs16 title__first title__first_mb25">Прайс-лист</h2>
-			<div class="divider divider_mb60"></div>
-			<div class="price__wrapper">
-				<div class="price__item">
-					<div class="price__title title title_fs14">Landing-page</div>
-					<div class="price__amount title title_fs14">от 8000 руб.</div>
-					<div class="price__descr">Одностраничный сайт для презентации услуг/товаров/...</div>
-				</div>
-				<div class="price__item">
-					<div class="price__title title title_fs14">Корпоративный сайт</div>
-					<div class="price__amount title title_fs14">от 20000 руб.</div>
-					<div class="price__descr">Сайт для вашего бизнеса или компании</div>
-				</div>
-				<div class="price__item">
-					<div class="price__title title title_fs14">Интернет-магазин</div>
-					<div class="price__amount title title_fs14">от 30000 руб.</div>
-					<div class="price__descr">Инструмент для ваших продаж в сети</div>
-				</div>
-				<div class="price__item">
-					<div class="price__title title title_fs14">Web-приложение</div>
-					<div class="price__amount title title_fs14">от 28000 руб.</div>
-					<div class="price__descr">Приложение внутри браузера для лучшего комфорта</div>
-				</div>
-				<div class="price__item">
-					<div class="price__title title title_fs14">Android/IOS Приложение</div>
-					<div class="price__amount title title_fs14">от 25000 руб.</div>
-					<div class="price__descr">Приложение для смартфона любой ОС</div>
-				</div>
-				<div class="price__item">
-					<div class="price__title title title_fs14">Дизайн</div>
-					<div class="price__amount title title_fs14">Индивидуально</div>
-					<div class="price__descr">Создам дизайн для вашего сайта/приложения...</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="contacts">
+	<section id="contacts" class="contacts">
 		<div class="container">
 			<div class="contacts__wrapper">
 				<div class="contacts__photo">

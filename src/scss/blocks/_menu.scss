@@ -58,26 +58,26 @@
 		font-size: 24px;
 		line-height: 36px;
 		margin-bottom: 15px;
-		a {
-			text-decoration: none;
-			color: #FFFFFF;
+		cursor: pointer;
+		text-decoration: none;
+		color: #FFFFFF;
+		&::before {
+			content: '';
+			position: absolute;
+			left: -35px;
+			top: 11px;
+			width: 15px;
+			height: 15px;
+			border: 1.5px solid #000000;
+			border-radius: 100%;
+			transition: 0.2s;
+		}
+		&:hover {
 			&::before {
-				content: '';
-				position: absolute;
-				left: -35px;
-				top: 11px;
-				width: 15px;
-				height: 15px;
-				border: 1.5px solid #000000;
-				border-radius: 100%;
-				transition: 0.2s;
-			}
-			&:hover {
-				&::before {
-					background-color:#FFFFFF;
-				}
+				background-color:#FFFFFF;
 			}
 		}
+
 	}
 	&__social {
 		position: absolute;
