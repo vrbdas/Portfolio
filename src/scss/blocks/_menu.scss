@@ -11,11 +11,7 @@
 	span {
 		display: block;
 		width: 30px;
-		height: 3px;
-		background: #151812;
-	}
-	span.long {
-		width: 36px;
+		border: 2px solid #151812;
 	}
 }
 .menu {

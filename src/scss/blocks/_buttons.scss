@@ -10,6 +10,7 @@
 	font-weight: 700;
 	text-decoration: none;
 	border: none;
+	cursor: pointer;
 	&:hover {
 		background: $hover-color;
 		transition: 0.2s;
