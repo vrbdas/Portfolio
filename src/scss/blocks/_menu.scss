@@ -33,10 +33,11 @@
 		position: relative;
 		width: 345px;
 		padding: 140px 0 0 75px;
-		background-color: $main-color;
+		background-color: #fff;
 		height: 100%;
 		transition: 0.6s;
 		z-index: 10;
+		box-shadow: 5px 0px 10px 0px rgba(50, 50, 50, 0.5);
 	}
 	&__close {
 		position: absolute;
@@ -56,24 +57,18 @@
 		margin-bottom: 15px;
 		cursor: pointer;
 		text-decoration: none;
-		color: #FFFFFF;
-		&::before {
+		color: #000;
+		&:hover::before {
 			content: '';
-			position: absolute;
-			left: -35px;
-			top: 11px;
-			width: 15px;
-			height: 15px;
-			border: 1.5px solid #000000;
+			width: 36px;
+			height: 36px;
 			border-radius: 100%;
-			transition: 0.2s;
+			background: $main-color;
+			position: absolute;
+			z-index: -1;
+			top: 0px;
+			left: -7px;
 		}
-		&:hover {
-			&::before {
-				background-color:#FFFFFF;
-			}
-		}
-
 	}
 	&__social {
 		position: absolute;
@@ -96,7 +91,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background-color: rgb(255, 255, 255);
+		background-color: rgb(121, 121, 121);
 		opacity: 0.7;
 	}
 }

@@ -19,7 +19,9 @@
 		gap: 20px;
 	}
 	&__wrapper {
-		transform: translateY(-44px);
+		position: absolute;
+		top: 19%;
+		left: 12%;
 	}
 	&__arrow {
 		position: absolute;
