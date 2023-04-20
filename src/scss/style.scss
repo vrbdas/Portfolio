@@ -15,7 +15,6 @@
 .container {
     width: 1140px;
     margin: 0 auto;
-    overflow: hidden;
 }
 
 .divider {
@@ -32,6 +31,10 @@
 
 section {
     scroll-margin-top: -60px;
+}
+
+.hide {
+    display: none;
 }
 
 @import 'blocks/promo';
