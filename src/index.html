@@ -17,13 +17,13 @@
 			<meta property="og:image" content="img/metatag.webp">
 	<!-- /Meta Tags -->
 	<!--  Favicon -->
-		<link rel="icon" type="image/png" sizes="192x192"  href="icons/favicon/android-icon-192x192.png">
-		<link rel="icon" type="image/png" sizes="32x32" href="icons/favicon/favicon-32x32.png">
-		<link rel="icon" type="image/png" sizes="96x96" href="icons/favicon/favicon-96x96.png">
-		<link rel="icon" type="image/png" sizes="16x16" href="icons/favicon/favicon-16x16.png">
-		<link rel="manifest" href="icons/favicon/manifest.json">
+		<link rel="icon" type="image/png" sizes="192x192"  href="svg/favicon/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="svg/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="svg/favicon/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="svg/favicon/favicon-16x16.png">
+		<link rel="manifest" href="svg/favicon/manifest.json">
 		<meta name="msapplication-TileColor" content="#ffffff">
-		<meta name="msapplication-TileImage" content="icons/favicon/ms-icon-144x144.png">
+		<meta name="msapplication-TileImage" content="svg/favicon/ms-icon-144x144.png">
 		<meta name="theme-color" content="#ffffff">
 	<!-- /Favicon -->
 	<title>Портфолио</title>
@@ -32,8 +32,8 @@
 <body>
 	<aside class="sidepanel">
 		<div class="sidepanel__social">
-			<a href="" class="sidepanel__link"><img src="icons/linkedin-rotate.svg" alt="">
-			<a href="" class="sidepanel__link"><img src="icons/github-rotate.svg" alt="">
+			<a href="" class="sidepanel__link"><img src="svg/linkedin-rotate.svg" alt="">
+			<a href="" class="sidepanel__link"><img src="svg/github-rotate.svg" alt="">
 			</a>
 			<div class="sidepanel__divider"></div>
 			<div class="sidepanel__text">Социальные сети</div>
@@ -55,9 +55,9 @@
 					<li class="menu__link">Контакты</li>
 				</ul>
 			</nav>
-			<div class="menu__social">
-				<a href=""><img src="icons/github.svg" alt="github"></a>
-				<a href=""><img src="icons/linkedin.svg" alt="linkedin"></a>
+			<div class="social menu__social">
+				<a href=""><img src="svg/github.svg" alt="github"></a>
+				<a href=""><img src="svg/linkedin.svg" alt="linkedin"></a>
 			</div>
 		</div>
 		<div class="menu__overlay"></div>
@@ -67,6 +67,10 @@
 			<span></span>
 			<span></span>
 			<span></span>
+		</div>
+		<div class="social promo__social">
+			<a href=""><img src="svg/github.svg" alt="github"></a>
+			<a href=""><img src="svg/linkedin.svg" alt="linkedin"></a>
 		</div>
 		<span class="promo__arrow">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z"/></svg>
@@ -85,8 +89,8 @@
 			<div class="about-me__wrapper">
 				<div class="about-me__photo">
 					<picture>
-						<source media="(max-width: 576px)" srcset="img/photo-mountains.jpg.jpg">
-						<source media="(min-width: 577px)" srcset="">
+						<source media="(max-width: 769px)" srcset="img/photo-mountains-mobile.jpg">
+						<source media="(min-width: 768px)" srcset="img/photo-mountains.jpg">
 						<img src="img/photo-mountains.jpg" alt="photo">
 					</picture>
 				</div>
@@ -103,7 +107,7 @@
 				<div class="about-me__skills">
 					<div class="skill">
 						<div class="skill__icon">
-							<img src="icons/web development.svg" alt="web development">
+							<img src="svg/web development.svg" alt="web development">
 						</div>
 						<div>
 							<div class="title title_fs14 skill__title">Программирование</div>
@@ -113,7 +117,7 @@
 					</div>
 					<div class="skill">
 						<div class="skill__icon">
-							<img src="icons/Design.svg" alt="Design">
+							<img src="svg/Design.svg" alt="Design">
 						</div>
 						<div>
 							<div class="title title_fs14 skill__title">Верстка</div>
@@ -135,7 +139,7 @@
 					<div class="resume__item">
 						<div class="resume__item-head">
 							<div class="resume__item-icon">
-								<img src="icons/University.svg" alt="University">
+								<img src="svg/University.svg" alt="University">
 							</div>
 							<div class="title title_fs14">МГТУГА</div>
 							<div class="resume__item-subtitle">Диплом инженера | Москва (2002–2007)</div>
@@ -146,7 +150,7 @@
 					<div class="resume__item">
 						<div class="resume__item-head">
 							<div class="resume__item-icon">
-								<img src="icons/Courses.svg" alt="University">
+								<img src="svg/Courses.svg" alt="University">
 							</div>
 							<div class="title title_fs14">Udemy</div>
 							<div class="resume__item-subtitle">Web-разработчик (2022)</div>
@@ -157,7 +161,7 @@
 					<div class="resume__item">
 						<div class="resume__item-head">
 							<div class="resume__item-icon">
-								<img src="icons/Courses.svg" alt="University">
+								<img src="svg/Courses.svg" alt="University">
 							</div>
 							<div class="title title_fs14">Udemy</div>
 							<div class="resume__item-subtitle">Полный курс по JavaScript (2023)</div>
@@ -171,25 +175,14 @@
 					<div class="resume__item">
 						<div class="resume__item-head">
 							<div class="resume__item-icon">
-								<img src="icons/Developer.svg" alt="University">
+								<img src="svg/Developer.svg" alt="University">
 							</div>
 							<div class="title title_fs14">Главный специалист</div>
-							<div class="resume__item-subtitle">Корпорация «Иркут» | Москва (2016-2022)</div>
+							<div class="resume__item-subtitle">Корпорация «Иркут» | Москва (2016–2022)</div>
 						</div>
 						<div class="resume__item-body">Разработка и верстка интерактивного руководства по поиску и устранению неисправностей для авиационной техники.
 						</div>
 					</div>
-					<!-- <div class="resume__item">
-						<div class="resume__item-head">
-							<div class="resume__item-icon">
-								<img src="icons/Graphic Designer.svg" alt="University">
-							</div>
-							<div class="title title_fs14">UI/UX Designer</div>
-							<div class="resume__item-subtitle">Squad Team | Москва (2018)</div>
-						</div>
-						<div class="resume__item-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmo.
-						</div>
-					</div> -->
 				</div>
 			</div>
 		</div>
@@ -202,70 +195,56 @@
 			<div class="tools__wrapper">
 				<div class="tool">
 					<div class="tool__image">
-						<img src="icons/html5.svg" alt="html5">
+						<img src="svg/html5.svg" alt="html5">
 					</div>
 					<div class="title title_fs14 tool__title">HTML5</div>
 					<div class="tool__descr">Именно он создает каркас вашего сайта или приложения, а пятая версия позволяет мне создавать более SEO-оптимизированную структуру вашего продукта.</div>
 				</div>
 				<div class="tool">
 					<div class="tool__image">
-						<img src="icons/css3.svg" alt="css3">
+						<img src="svg/css3.svg" alt="css3">
 					</div>
 					<div class="title title_fs14 tool__title">CSS3</div>
 					<div class="tool__descr">Этот язык стилей служит для создания абсолютно любого внешнего вида вашего сайта или приложения. Все ограничивается только вашей фантазией!</div>
 				</div>
 				<div class="tool">
 					<div class="tool__image">
-						<img src="icons/JS.svg" alt="JS">
+						<img src="svg/JS.svg" alt="JS">
 					</div>
 					<div class="title title_fs14 tool__title">Java Script</div>
 					<div class="tool__descr">Этот язык программирования способен оживить все что угодно: слайдеры, окна, подсказки, вкладки, получение данных от сервера и многое другое.</div>
 				</div>
 				<div class="tool">
 					<div class="tool__image">
-						<img src="icons/Jquery.svg" alt="Jquery">
+						<img src="svg/jquery.svg" alt="Jquery">
 					</div>
 					<div class="title title_fs14 tool__title">Jquery</div>
 					<div class="tool__descr">Библиотека Jquery позволяет ускорить разработку. Без необходимости интегрировать в проект я ее не буду, но навык работы с ней присутствует.</div>
 				</div>
-				<!-- <div class="tool">
-					<div class="tool__image">
-						<img src="icons/React.svg" alt="React">
-					</div>
-					<div class="title title_fs14 tool__title">React</div>
-					<div class="tool__descr">Эта библиотека позволяет создавать web-приложения. Я могу создать максимально интерактивный продукт именно под ваши цели.</div>
-				</div>
 				<div class="tool">
 					<div class="tool__image">
-						<img src="icons/Node.js.svg" alt="Node.js">
-					</div>
-					<div class="title title_fs14 tool__title">Node.js</div>
-					<div class="tool__descr">Эта платформа позволяет создавать бэкенд для вашего продукта - “мозги”, которые будут выполнять действия, которые пользователь не видит.</div>
-				</div> -->
-				<div class="tool">
-					<div class="tool__image">
-						<img src="icons/bootstrap5.svg" alt="bootstrap">
+						<img src="svg/bootstrap5.svg" alt="bootstrap">
 					</div>
 					<div class="title title_fs14 tool__title">Bootstrap</div>
 					<div class="tool__descr">Это свободный набор инструментов при необходимости дает возможность быстро создать адаптивную верстку сайта.</div>
 				</div>
 				<div class="tool">
 					<div class="tool__image">
-						<img src="icons/sass.svg" alt="sass">
+						<img src="svg/sass.svg" alt="sass">
 					</div>
 					<div class="title title_fs14 tool__title">Sass</div>
 					<div class="tool__descr">Это скриптовый язык препроцессора, который упрощает и ускоряет написание CSS-кода.</div>
 				</div>
 				<div class="tool">
 					<div class="tool__image">
-						<img src="icons/git.svg" alt="git">
+						<img src="svg/git.svg" alt="git">
 					</div>
 					<div class="title title_fs14 tool__title">Git</div>
 					<div class="tool__descr">Это удобная система, которая помогает разработчикам организовать свой код и сотрудничать над проектами более эффективно.</div>
 				</div>
 				<div class="tool">
 					<div class="tool__image">
-						<img src="icons/webpack.svg" alt="webpack">
+						<img src="svg/webpack.svg" alt="webpack">
 					</div>
 					<div class="title title_fs14 tool__title">Webpack</div>
 					<div class="tool__descr">Этот сборщик модулей объединяет несколько файлов в один, который будет загружаться на сайте. Это упрощает загрузку страницы и улучшает производительность.</div>
@@ -302,24 +281,25 @@
 			<div class="title title_fs36 title__second">Мои работы</div>
 			<div class="divider divider_mb60"></div>
 			<div class="portfolio__wrapper">
-				<a href="" class="portfolio__item">
-					<img src="img/uber.webp" alt="uber">
+				<a href="" class="portfolio__item horizontal-top">
+					<img src="img/pulse.jpg" alt="pulse">
 				</a>
-				<a href="" class="portfolio__item">
-					<img src="img/pulse.webp" alt="pulse">
-				</a>
-				<a href="" class="portfolio__item">
-					<img src="img/bread.webp" alt="bread">
+				<a href="" class="portfolio__item horizontal-bottom">
+					<img src="img/uber.jpg" alt="uber">
 				</a>
 				<a href="" class="portfolio__item vertical">
-					<img src="img/plans.webp" alt="plans">
+					<picture>
+						<source media="(max-width: 575px)" srcset="img/food-horizontal.jpg">
+						<source media="(min-width: 576px)" srcset="img/food-vertical.jpg">
+						<img src="img/food-vertical.jpg" alt="food">
+					</picture>
 				</a>
-				<a href="" class="portfolio__item">
-					<img src="img/ipad.webp" alt="ipad">
-				</a>
-				<a href="" class="portfolio__item horizontal">
-					<img src="img/mac.webp" alt="mac">
-				</a>
+				<div href="" class="portfolio__item portfolio__item-disable">
+					<img src="img/beacon.jpg" alt="beacon">
+				</div>
+				<div href="" class="portfolio__item portfolio__item-disable">
+					<img src="img/music.webp" alt="music">
+				</div>
 			</div>
 		</div>
 	</section>
@@ -341,13 +321,13 @@
 						<div class="title title_fs14 contacts__text-1">Любым удобным для вас способом:</div>
 						<div class="contacts__social">
 							<a href="" class="contacts__link">
-								<img src="icons/contacts-whatsapp.svg" alt="whatsapp">
+								<img src="svg/contacts-whatsapp.svg" alt="whatsapp">
 							</a>
 							<a href="" class="contacts__link">
-								<img src="icons/contacts-telegram.svg" alt="telegram">
+								<img src="svg/contacts-telegram.svg" alt="telegram">
 							</a>
 							<a href="" class="contacts__link">
-								<img src="icons/contacts-email.svg" alt="email">
+								<img src="svg/contacts-email.svg" alt="email">
 							</a>
 						</div>
 						<div class="title title_fs14 contacts__text-2">Или оставьте ваши данные и я сам вам напишу:</div>
@@ -373,7 +353,6 @@
 
 							</div>
 						</div>
-
 					</form>
 				</div>
 			</div>
@@ -391,7 +370,6 @@
 				<p>Политика в отношении обработки персональных данных определяет основные принципы и правила по обработке персональных данных, которыми мы руководствуемся в нашей работе, а также в общении с клиентами, поставщиками и сотрудниками. Политика в отношении обработки персональных данных распространяется на всех наших сотрудников.</p>
 				<p>При обработке персональных данных мы стремимся соблюдать требования законодательства Российской Федерации, в частности Федеральный закон № 152-ФЗ «О персональных данных», а также нормы и правила, установленные в нашей компании.</p>
 				<p>Политика в отношении обработки персональных данных:</p>
-				<p><a href=#>policy.pdf</a></p>
 				<p>По всем вопросам вы можете связаться по email.</p>
 			</div>
 		</div>

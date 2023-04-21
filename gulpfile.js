@@ -26,7 +26,7 @@ gulp.task('watch', function() {
     gulp.watch("src/js/**/*").on('change', gulp.parallel('scripts'));
     gulp.watch("src/fonts/**/*").on('all', gulp.parallel('fonts'));
     gulp.watch("src/php/**/*").on('change', gulp.parallel('php'));
-    gulp.watch("src/icons/**/*").on('all', gulp.parallel('icons'));
+    gulp.watch("src/svg/**/*").on('all', gulp.parallel('svg'));
     gulp.watch("src/img/**/*").on('all', gulp.parallel('images'));
 });
 
@@ -50,9 +50,9 @@ gulp.task('php', function () {
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/php`))
 });
 
-gulp.task('icons', function () {
-    return gulp.src("src/icons/**/*")
-        .pipe(gulp.dest(`C:/Code/domains/${destFolder}/icons`))
+gulp.task('svg', function () {
+    return gulp.src("src/svg/**/*")
+        .pipe(gulp.dest(`C:/Code/domains/${destFolder}/svg`))
 });
 
 gulp.task('images', function () {
@@ -60,4 +60,4 @@ gulp.task('images', function () {
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/img`))
 });
 
-gulp.task('default',gulp.series('clean', gulp.parallel('styles', 'watch', 'html', 'scripts', 'fonts', 'php', 'icons',  'images')));
+gulp.task('default',gulp.series('clean', gulp.parallel('styles', 'watch', 'html', 'scripts', 'fonts', 'php', 'svg',  'images')));

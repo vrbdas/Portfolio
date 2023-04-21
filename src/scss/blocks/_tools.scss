@@ -2,26 +2,27 @@
     padding-top: 120px;
     &__wrapper {
         display: grid;
-        grid-template: auto/repeat(auto-fit, 270px);
+        grid-template: minmax(270px, auto) / repeat(auto-fit, 270px);
         justify-content: center;
         grid-auto-rows: 1fr;
         gap: 13px;
         padding: 0 10px;
-        margin-bottom: 120px;
+        margin-bottom: 60px;
         .tool {
             border: 1px solid #000000;
-            min-height: 270px;
-            padding: 30px 30px 25px 30px;
+            padding: 25px;
+            display: grid;
+            grid-template: auto auto 1fr / auto;
+            align-items: start;
+            gap: 10px;
             &__image {
-                height: 65px;
-                margin-bottom: 20px;
                 img {
-                    max-width: 160px;
-                    height: 100%;
+                    width: 65px;
+                    height: 65px;
                 }
             }
             &__title {
-                margin-bottom: 15px;
+                width: fit-content;
             }
             &__descr {
                 font-weight: 500;
