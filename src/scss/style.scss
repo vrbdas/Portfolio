@@ -38,18 +38,17 @@ section {
 }
 
 .social {
-    display: none;
-		align-items: center;
-		justify-content: center;
-		gap: 10px;
-		img {
-			width: 24px;
-			height: 24px;
-		}
-		a:hover {
-			transform: scale(1.2);
-			transition: 0.2s;
-		}
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    img {
+        width: 24px;
+        height: 24px;
+    }
+    a:hover {
+        transform: scale(1.2);
+        transition: 0.2s;
+    }
 }
 
 @import 'blocks/promo';

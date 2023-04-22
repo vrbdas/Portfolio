@@ -2,7 +2,7 @@
 	height: 100vh;
 	width: 100%;
 	position: relative;
-	background: url('../img/Background.jpg') center center/cover no-repeat;
+	background: url('../img/Background.webp') center center/cover no-repeat;
 	display: flex;
 	align-items: center;
 	&__title {
@@ -24,6 +24,7 @@
 		left: 12%;
 	}
 	&__social {
+		display: none;
 		position: absolute;
 		left: 25px;
 		top: 25px;

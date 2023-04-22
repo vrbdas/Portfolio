@@ -15,12 +15,19 @@ __webpack_require__.r(__webpack_exports__);
 function animation() {
 
   const targets = [ // контейнеры, за которыми нужно следить
-    document.querySelector('.about-me__skills'),
-    document.querySelector('.progress'),
-    document.querySelector('.tools__wrapper')
+    document.querySelector('.about-me__skills'), // контейнер с блоками в секции aboutme
+    document.querySelector('.progress'), // контейнер с блоками с процентами
   ];
+
+  const toolBlocks = document.querySelectorAll('.tool'); // блоки в секции tools
+  toolBlocks.forEach((item, i) => {
+    targets.push(item); // добавляет каждый элемент из nodelist в массив targets
+    item.style.opacity = '0'; // сначала прозрачные
+    item.style.transition = `all 0.6s linear ${i / 5}s`; // задержка анимации для каждого следующего элемента
+  });
+
   const observer = new IntersectionObserver(callback, {
-    rootMargin: '0px 0px -100px 0px'
+    rootMargin: '0px 0px -100px 0px', // поля как в CSS, меняют срабатывание события пересечения
   }); // создается объект observer. {} это разные опции
 
   targets.forEach((target) => {
@@ -30,12 +37,6 @@ function animation() {
   const skillBlocks = document.querySelectorAll('.skill'); // блоки в секции about-me, которые будут выезжать справа
   skillBlocks.forEach((item, i) => {
     item.style.transform = `translateX(100vw)`; // начальное смещение за границу блока
-    item.style.transition = `all 0.6s linear ${i / 5}s`; // задержка анимации для каждого следующего элемента
-  });
-
-  const toolBlocks = document.querySelectorAll('.tool');
-  toolBlocks.forEach((item, i) => {
-    item.style.opacity = '0';
     item.style.transition = `all 0.6s linear ${i / 5}s`; // задержка анимации для каждого следующего элемента
   });
 
@@ -54,10 +55,8 @@ function animation() {
         observer.unobserve(entry.target); // удаляет обработчик событий
       }
 
-      if (entry.isIntersecting && entry.target.matches('.tools__wrapper')) { // действие, когда элемент входит в область наблюдения (по умолчанию это видимая часть страницы)
-        toolBlocks.forEach((item) => {
-          item.style.opacity = '1';
-        });
+      if (entry.isIntersecting && entry.target.matches('.tool')) { // действие, когда элемент входит в область наблюдения (по умолчанию это видимая часть страницы)
+        entry.target.style.opacity = '1'; // блоки становятся непрозрачными
         observer.unobserve(entry.target); // удаляет обработчик событий
       }
 
@@ -301,7 +300,6 @@ window.addEventListener('DOMContentLoaded', () => {
   (0,_modules_policy__WEBPACK_IMPORTED_MODULE_1__["default"])();
   (0,_modules_animation__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
-
 
 
 
