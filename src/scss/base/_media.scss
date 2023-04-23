@@ -134,6 +134,13 @@
             column-gap: 10px;
             grid-template-columns: 1fr 1fr;
         }
+        .contacts {
+            &__btn {
+                &-message {
+                    display: none;
+                }
+            }
+        }
     }
 }
 
@@ -313,6 +320,12 @@
         }
         &__policy {
             order: 1;
+            width: 100%;
+        }
+    }
+    .policy {
+        &__block {
+            padding: 40px 20px 20px 20px;
             width: 100%;
         }
     }
