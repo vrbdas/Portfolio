@@ -90,8 +90,8 @@
             resize: none;
         }
     }
-}
-#policyLink {
-    cursor: pointer;  
-    color: #2306D6;
+    &__policy {
+        cursor: pointer;  
+        color: #2306D6;
+    }
 }

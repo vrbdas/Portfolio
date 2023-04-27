@@ -91,6 +91,67 @@ function animation() {
 
 /***/ }),
 
+/***/ "./src/js/modules/modal.js":
+/*!*********************************!*\
+  !*** ./src/js/modules/modal.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function modal(modalBlockSelector, modalOpenSelector, modalCloseSelector, arrowSelector) {
+  // блок с модальным окном
+  // блок при клике на который открывается окно
+  // [блоки внутри окна, при клике на которые закрывается окно]
+  // блок со стрелкой на первом экране
+
+  const modalBlock = document.querySelector(modalBlockSelector);
+  const modalLink = document.querySelector(modalOpenSelector);
+  const arrow = document.querySelector(arrowSelector);
+
+  modalLink.addEventListener('click', function() { // открывает окно при нажатии на элемент
+    modalOpen();
+  });
+
+  modalBlock.addEventListener('click', (event) => { // закрывает окно при нажатии на modalCloseSelector
+    modalCloseSelector.forEach((item) => {
+      if (event.target.closest(item) && modalBlock.contains(event.target.closest(item))) {
+        modalClose();
+      }
+    });
+  });
+
+  document.addEventListener('keydown', (event) => { // Закрывает окно при нажатии Esc
+    if (event.code === 'Escape' && modalBlock.classList.contains('active')) {
+      modalClose();
+    }
+  });
+
+  function modalClose() {
+    modalBlock.classList.remove('active'); // закрывает окно
+    document.body.style.overflow = ''; // Возвращает прокрутку страницы
+    if (arrow && document.documentElement.scrollTop === 0) { // если страница не прокручена
+      arrow.style.display = 'block'; // показывает стрелку вниз
+    }
+  }
+  function modalOpen() {
+    modalBlock.classList.add('active'); // показывает окно
+    document.body.style.overflow = 'hidden'; // Предотвращает прокрутку страницы, когда открыто меню
+    if (arrow) {
+      arrow.style.display = 'none'; // скрывает стрелку вниз
+    }
+  }
+
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (modal);
+
+
+
+/***/ }),
+
 /***/ "./src/js/modules/navigation.js":
 /*!**************************************!*\
   !*** ./src/js/modules/navigation.js ***!
@@ -101,9 +162,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
-function menu() {
-  // const hamburger = document.querySelector('.hamburger');
-  // const menuBlock = document.querySelector('.menu');
+function navigation() {
+
   const menuLink = document.querySelectorAll('.menu__link');
   const promoArrow = document.querySelector('.promo__arrow');
   const arrowUp = document.querySelector('.arrow-up');
@@ -117,74 +177,11 @@ function menu() {
     document.querySelector('#contacts'),
   ];
 
-  // блок с модальным окном, блок при клике на который открывается окно, [блоки внутри окна, при клике на которые закрывается окно]
-  modal('.menu', '.hamburger', ['.menu__close', '.menu__link', '.menu__overlay']);
-
-  function modal(modalBlockSelector, modalOpenSelector, modalCloseSelector) {
-    const modalBlock = document.querySelector(modalBlockSelector);
-    const modalOpen = document.querySelector(modalOpenSelector);
-
-    modalOpen.addEventListener('click', function() { // открывает меню при нажатии на гамбургер
-      modalBlock.classList.add('active');
-      document.body.style.overflow = 'hidden'; // Предотвращает прокрутку страницы, когда открыто меню
-      promoArrow.style.display = 'none'; // скрывает стрелку вниз
-    });
-
-    modalBlock.addEventListener('click', (event) => {
-      modalCloseSelector.forEach((item) => {
-        if (event.target.closest(item) && modalBlock.contains(event.target.closest(item))) { // при нажатии на modalCloseSelector
-          modalBlock.classList.remove('active'); // закрывает меню
-          document.body.style.overflow = ''; // Возвращает прокрутку страницы
-          if (document.documentElement.scrollTop === 0) { // если страница не прокручена
-            promoArrow.style.display = 'block'; // показывает стрелку вниз
-          }
-        }
-      });
-    });
-  }
-
   menuLink.forEach((item, i) => { // клик на ссылки из меню. i определяет номер ссылки
     item.addEventListener('click', () => {
       ancors[i].scrollIntoView(); // перелистывает до якоря с таким же номером
     });
   });
-
-  // hamburger.addEventListener('click', function() { // открывает меню при нажатии на гамбургер
-  //   menuBlock.classList.add('active');
-  //   document.body.style.overflow = 'hidden'; // Предотвращает прокрутку страницы, когда открыто меню
-  //   promoArrow.style.display = 'none'; // скрывает стрелку вниз
-  // });
-
-  // menuBlock.addEventListener('click', (e) => {
-  //   if (e.target.closest('.menu__close') && menuBlock.contains(e.target.closest('.menu__close'))) { // закрывает меню при нажатии на крестик
-  //     menuBlock.classList.remove('active');
-  //     document.body.style.overflow = ''; // Возвращает прокрутку страницы
-  //     if (document.documentElement.scrollTop === 0) { // если страница не прокручена
-  //       promoArrow.style.display = 'block'; // показывает стрелку вниз
-  //     }
-  //   }
-
-  //   if (e.target.matches('.menu__overlay')) { // закрывает меню при нажатии на оверлей
-  //     menuBlock.classList.remove('active');
-  //     document.body.style.overflow = ''; // Возвращает прокрутку страницы
-  //     if (document.documentElement.scrollTop === 0) { // если страница не прокручена
-  //       promoArrow.style.display = 'block'; // показывает стрелку вниз
-  //     }
-  //   }
-
-  //   if (e.target.closest('.menu__link') && menuBlock.contains(e.target.closest('.menu__link'))) { // клик на ссылки из меню
-  //     menuBlock.classList.remove('active'); // закрывает меню
-  //     document.body.style.overflow = ''; // Возвращает прокрутку страницы
-  //     if (document.documentElement.scrollTop === 0) { // если страница не прокручена
-  //       promoArrow.style.display = 'block'; // показывает стрелку вниз
-  //     }
-  //     menuLink.forEach((item, i) => { // определяет номер ссылки
-  //       if (e.target === item) {
-  //         ancors[i].scrollIntoView(); // перелистывает до якоря с таким же номером
-  //       }
-  //     });
-  //   }
-  // });
 
   promoArrow.addEventListener('click', () => { // перелистывает на след. секцию при клике на стрелку вниз
     ancors[0].scrollIntoView();
@@ -216,38 +213,9 @@ function menu() {
       ancors[0].scrollIntoView();
     }
   });
-
-  const policyLink = document.querySelector('#policyLink');
-  const policyBlock = document.querySelector('.policy');
-
-  policyLink.addEventListener('click', function() { // открывает окно с политикой
-    policyBlock.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Предотвращает прокрутку страницы, когда открыто окно
-  });
-
-  policyBlock.addEventListener('click', (event) => {
-    if (event.target && event.target.matches('.policy__overlay')) { // клик на область вокруг блока
-      policyBlock.classList.remove('active');
-      document.body.style.overflow = ''; // Возвращает прокрутку страницы
-    }
-    if (event.target && event.target.closest('.policy__close') && policyBlock.contains(event.target)) { // клик на крестик
-      policyBlock.classList.remove('active');
-      document.body.style.overflow = ''; // Возвращает прокрутку страницы
-    }
-  });
-
-  // document.addEventListener('keydown', (event) => { // Закрывает окно при нажатии Esc
-  //   if (event.code === 'Escape' && modalBlock.classList.contains('show')) {
-  //     modalHide(modalBlockSelector);
-  //   }
-  // });
-
-
-
-
 }
 
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (menu);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (navigation);
 
 /***/ })
 
@@ -314,16 +282,19 @@ var __webpack_exports__ = {};
   !*** ./src/js/script.js ***!
   \**************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _modules_navigation__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/navigation */ "./src/js/modules/navigation.js");
-/* harmony import */ var _modules_animation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/animation */ "./src/js/modules/animation.js");
+/* harmony import */ var _modules_modal__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/modal */ "./src/js/modules/modal.js");
+/* harmony import */ var _modules_navigation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/navigation */ "./src/js/modules/navigation.js");
+/* harmony import */ var _modules_animation__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/animation */ "./src/js/modules/animation.js");
+
 
 
 
 window.addEventListener('DOMContentLoaded', () => {
-  (0,_modules_navigation__WEBPACK_IMPORTED_MODULE_0__["default"])();
-  (0,_modules_animation__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])('.menu', '.hamburger', ['.menu__close', '.menu__link', '.menu__overlay'], '.promo__arrow'); // меню
+  (0,_modules_modal__WEBPACK_IMPORTED_MODULE_0__["default"])('.policy', '.contacts__policy', ['.policy__close', '.policy__overlay']); // модальное окно с политикой
+  (0,_modules_navigation__WEBPACK_IMPORTED_MODULE_1__["default"])();
+  (0,_modules_animation__WEBPACK_IMPORTED_MODULE_2__["default"])();
 });
-
 
 
 })();
