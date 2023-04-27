@@ -4,9 +4,9 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-$name = $_POST['name'];
-$phone = $_POST['phone'];
-$email = $_POST['email'];
+$name = $_POST["name"];
+$email = $_POST["email"];
+$text = $_POST["text"];
 
 require 'vendor/phpmailer/phpmailer/src/Exception.php';
 require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
@@ -17,7 +17,6 @@ $mail = new PHPMailer(true);
 
 try {
     //Server settings
-    //$mail->SMTPDebug = SMTP::DEBUG_SERVER; //Enable verbose debug output
     $mail->isSMTP(); //Send using SMTP
     $mail->Host = 'ssl://smtp.mail.ru'; //Set the SMTP server to send through
     $mail->SMTPAuth = true; //Enable SMTP authentication
@@ -28,28 +27,19 @@ try {
     $mail->setLanguage('ru');
 
     //Recipients
-    $mail->setFrom('lubosvet108@mail.ru', 'PULSE');
-    $mail->addAddress('vrbdas@gmail.com', 'Admin'); //Add a recipient
-    //$mail->addAddress('ellen@example.com'); //Name is optional
-    //$mail->addReplyTo('info@example.com', 'Information');
-    //$mail->addCC('cc@example.com');
-    //$mail->addBCC('bcc@example.com');
-
-    //Attachments
-    //$mail->addAttachment('/var/tmp/file.tar.gz'); //Add attachments
-    //$mail->addAttachment('/tmp/image.jpg', 'new.jpg'); //Optional name
+    $mail->setFrom('lubosvet108@mail.ru', 'Portfolio');
+    $mail->addAddress('lubosvet108@gmail.com', 'Admin'); //Add a recipient
 
     //Content
     $mail->CharSet = 'UTF-8';
     $mail->Encoding = 'base64';
     $mail->isHTML(true); //Set email format to HTML
-    $mail->Subject = 'Данные';
+    $mail->Subject = 'Данные из формы на сайте';
     $mail->Body = '
-        Пользователь оставил данные <br> 
+        Пользователь оставил данные <br>
         Имя: ' . $name . ' <br>
-        Номер телефона: ' . $phone . '<br>
-        E-mail: ' . $email . '';
-    //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+        E-mail: ' . $email . ' <br>
+        Сообщение: ' . $text . '<br>';
 
     $mail->send();
     echo 'Message has been sent';

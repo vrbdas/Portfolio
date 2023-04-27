@@ -32,7 +32,6 @@ gulp.task('watch', function() {
     gulp.watch("src/*.html").on('change', gulp.parallel('html'));
     gulp.watch("src/js/**/*").on('change', gulp.parallel('scripts'));
     gulp.watch("src/fonts/**/*").on('all', gulp.parallel('fonts'));
-    gulp.watch("src/php/**/*").on('change', gulp.parallel('php'));
     gulp.watch("src/svg/**/*").on('all', gulp.parallel('svg'));
     gulp.watch("src/img/**/*").on('all', gulp.parallel('images'));
 });
@@ -53,11 +52,6 @@ gulp.task('fonts', function () {
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/fonts`))
 });
 
-gulp.task('php', function () {
-    return gulp.src("src/php/**/*.php")
-        .pipe(gulp.dest(`C:/Code/domains/${destFolder}/php`))
-});
-
 gulp.task('svg', function () {
     return gulp.src("src/svg/**/*")
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/svg`))
@@ -68,4 +62,4 @@ gulp.task('images', function () {
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/img`))
 });
 
-gulp.task('default',gulp.series('clean', gulp.parallel('styles', 'watch', 'html', 'scripts', 'fonts', 'php', 'svg',  'images')));
+gulp.task('default',gulp.series('clean', gulp.parallel('styles', 'watch', 'html', 'scripts', 'fonts', 'svg',  'images')));
