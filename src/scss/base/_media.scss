@@ -48,7 +48,7 @@
         }
         &__form {
             gap: 20px;
-            grid-template: 45px minmax(100px, 1fr) 45px/repeat(2,1fr);
+            grid-template: 45px minmax(100px, 1fr) auto/repeat(2,1fr);
         }
     }
 }

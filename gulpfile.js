@@ -7,6 +7,7 @@ const clean = require('gulp-clean');
 const cleanCSS = require('gulp-clean-css');
 const rename = require('gulp-rename');
 const htmlmin = require('gulp-htmlmin');
+const sourcemaps = require('gulp-sourcemaps');
 
 const destFolder = 'Portfolio';
  
@@ -17,10 +18,12 @@ gulp.task('clean', function () {
 
 gulp.task('styles', function() {
     return gulp.src("src/scss/**/*.+(scss|sass)")
+        .pipe(sourcemaps.init())
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
         .pipe(rename({suffix: '.min', prefix: ''}))
         .pipe(autoprefixer())
         .pipe(cleanCSS({compatibility: 'ie8'}))
+        .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/css`))
 });
 

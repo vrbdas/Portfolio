@@ -4,7 +4,7 @@
         padding: 0 35px 0 52px;
         display: grid;
         grid-template-columns: 400px 585px;
-        grid-template-rows: 1fr;
+        grid-template-rows: 600px;
         justify-content: space-between;
         gap: 20px;
     }
@@ -42,7 +42,7 @@
     }
     &__form {
         display: grid;
-        grid-template: 45px minmax(190px, 1fr) 45px / repeat(2, 280px);
+        grid-template: 45px minmax(190px, 1fr) auto / repeat(2, 280px);
         justify-content: space-between;
         row-gap: 30px;
         label {
@@ -61,15 +61,16 @@
         display: grid;
         grid-template-columns: auto 1fr;
         column-gap: 35px;
+        align-items: center;
     }
     &__policy {
         font-weight: 500;
         font-size: 12px;
         line-height: 18px;
         align-self: center;
-        display: flex;
-        input {
-            margin-right: 10px;
+        &-link {
+            cursor: pointer;  
+            color: #2306D6;
         }
     }
     &__input {
@@ -89,9 +90,5 @@
             height: 100%;
             resize: none;
         }
-    }
-    &__policy {
-        cursor: pointer;  
-        color: #2306D6;
     }
 }
