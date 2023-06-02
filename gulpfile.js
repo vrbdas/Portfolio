@@ -47,6 +47,7 @@ gulp.task('watch', function() {
     gulp.watch("src/fonts/**/*").on('all', gulp.parallel('fonts'));
     gulp.watch("src/svg/**/*").on('all', gulp.parallel('svg'));
     gulp.watch("src/img/**/*").on('all', gulp.parallel('images'));
+    gulp.watch("src/*.php").on('change', gulp.parallel('php'));
 });
 
 gulp.task('html', function () {
@@ -76,4 +77,9 @@ gulp.task('images', function () {
         .pipe(gulp.dest(`C:/Code/domains/${destFolder}/img`))
 });
 
-gulp.task('default', gulp.series('clean', gulp.parallel('server', 'styles', 'watch', 'html', 'scripts', 'fonts', 'svg',  'images')));
+gulp.task('php', function () {
+    return gulp.src("src/*.php")
+        .pipe(gulp.dest(`C:/Code/domains/${destFolder}/`))
+});
+
+gulp.task('default', gulp.series('clean', gulp.parallel('server', 'styles', 'watch', 'html', 'scripts', 'fonts', 'svg',  'images', 'php')));

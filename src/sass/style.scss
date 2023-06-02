@@ -79,4 +79,18 @@ section {
     }
 }
 
+.error {
+    visibility: hidden;
+    &_active {
+        visibility: visible;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: -20px;
+        text-align: center;
+        font-size: 12px;
+        color: red;
+    }
+}
+
 @import 'base/media';

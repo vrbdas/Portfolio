@@ -1,21 +1,71 @@
 <?php
+
 //Import PHPMailer classes into the global namespace
 //These must be at the top of your script, not inside a function
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
-$name = $_POST["name"];
-$email = $_POST["email"];
-$text = $_POST["text"];
-
-require 'vendor/phpmailer/phpmailer/src/Exception.php';
 require 'vendor/phpmailer/phpmailer/src/PHPMailer.php';
 require 'vendor/phpmailer/phpmailer/src/SMTP.php';
 
-//Create an instance; passing `true` enables exceptions
-$mail = new PHPMailer(true);
+$name = '';
+$email = '';
+$text = '';
 
-try {
+$nameErr = '';
+$emailErr = '';
+
+$result = []; // массив на выходе
+
+function testInput($data) { // обрезает пробелы и заменяет специальные символы на html коды для безопасности
+    $data = mb_substr($data, 0, 1000);  // обрезает, если длиннее 1000 символов
+    $data = trim($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+if ( // проверка значений на пустоту и соответствие
+    empty($_POST['name']) ||
+    empty($_POST['email']) ||
+    !preg_match("/^[а-яёА-ЯЁA-Za-z ]*$/u", $_POST['name']) ||
+    !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)
+) {
+    if (empty($_POST['name'])) {
+        $nameErr = "Поле «Имя» не должно быть пустым";
+    } elseif (!preg_match("/^[а-яёА-ЯЁA-Za-z ]*$/u", $_POST['name'])) {
+        $nameErr = "В поле «Имя» разрешены только буквы и пробелы";
+    }
+
+    if (empty($_POST['email'])) {
+        $emailErr = "Поле «email» не должно быть пустым";
+    } elseif (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $emailErr = "Некорректное значение в поле «email»";
+    }
+} else { // если все проверки прошли, сохраняет данные формы
+    $name = testInput($_POST['name']);
+    $email = testInput($_POST['email']);
+    $text = testInput($_POST['text']);
+}
+
+if (!empty($name) && !empty($email)) {
+    $result = [
+        'code' => '1',
+        'message' => 'Форма успешно отправлена',
+    ];
+    send_mail($name, $email, $text);
+
+} else {
+    $result = [
+        'code' => '0',
+        'nameErr' => $nameErr,
+        'emailErr' => $emailErr,
+        'message' => 'Форма не прошла валидацию на сервере',
+    ];
+}
+
+function send_mail($name, $email, $text) {
+    //Create an instance; passing `true` enables exceptions
+    $mail = new PHPMailer();
+
     //Server settings
     $mail->isSMTP(); //Send using SMTP
     $mail->Host = 'ssl://smtp.mail.ru'; //Set the SMTP server to send through
@@ -40,9 +90,7 @@ try {
         Имя: ' . $name . ' <br>
         E-mail: ' . $email . ' <br>
         Сообщение: ' . $text . '<br>';
-
     $mail->send();
-    echo 'Message has been sent';
-} catch (Exception $e) {
-    echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
+
+echo json_encode($result); // кодирует массив в JSON
