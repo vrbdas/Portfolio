@@ -5,24 +5,26 @@ function contactForm() {
   const contactsTop = document.querySelector('.contacts__top');
   const formInputs = document.querySelectorAll('form input');
 
-  formInputs.forEach((item) => { // проверять при вводе все input
-    item.addEventListener('input', () => {
-      validCheck(item);
+  formInputs.forEach((inputElem) => { // проверять при все input
+    const errorElem = inputElem.nextElementSibling; // следующий соседний с input элемент это span с ошибкой
+    inputElem.addEventListener('focus', () => {
+      errorElem.textContent = ''; // сбросить содержимое сообщения
+      errorElem.className = 'error'; // сбросить визуальное состояние сообщения
+      inputElem.style.borderColor = 'unset'; // сброс красной рамки
+    });
+    inputElem.addEventListener('blur', () => {
+      validCheck(inputElem, errorElem);
     });
   });
 
   bindPostData(form);
 
-  function validCheck(inputElem) {
-    const errorElem = inputElem.nextElementSibling; // следующий соседний с input элемент это span с ошибкой
-    errorElem.textContent = ''; // сбросить содержимое сообщения
-    errorElem.className = 'error'; // сбросить визуальное состояние сообщения
+  function validCheck(inputElem, errorElem) {
     if (!inputElem.validity.valid) {
       showError(inputElem, errorElem); // показать сообщение с ошибкой
       inputElem.style.borderColor = 'red';
       return false;
     }
-    inputElem.style.borderColor = 'unset';
     return true;
   }
 
