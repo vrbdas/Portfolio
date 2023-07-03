@@ -43,11 +43,10 @@ function contactForm() {
   function bindPostData(form) {
     form.addEventListener('submit', (event) => {
       event.preventDefault(); // предотвращает перезагрузку страницы
-
       const eventInputs = event.target.querySelectorAll('input'); // все input в форме, которую пытаются отправить
-      eventInputs.forEach((input) => validCheck(input)); // для каждого input проверяет на ошибки и выводит сообщения об ошибке
+      eventInputs.forEach((input) => validCheck(input, input.nextElementSibling)); // для каждого input проверяет на ошибки и выводит сообщения об ошибке
       for (const input of eventInputs) {
-        if (!validCheck(input)) { // прерывает дальнейшее выполнение функции, если хотя бы в одном поле ошибка
+        if (!validCheck(input, input.nextElementSibling)) { // прерывает дальнейшее выполнение функции, если хотя бы в одном поле ошибка
           return;
         }
       }

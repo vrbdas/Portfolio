@@ -2,11 +2,10 @@
     padding-top: 120px;
     &__wrapper {
         display: grid;
-        grid-template: minmax(270px, auto) / repeat(auto-fit, 270px);
+        grid-template: auto / repeat(auto-fit, 210px);
         justify-content: center;
         grid-auto-rows: 1fr;
-        gap: 13px;
-        padding: 0 10px;
+        gap: 5px;
         margin-bottom: 60px;
         .tool {
             border: 1px solid #000000;
